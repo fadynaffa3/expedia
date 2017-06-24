@@ -6,19 +6,22 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
+    - 2.4.1
 
 * System dependencies
-
-* Configuration
+    - it's recommended to use rvm or rbenv
 
 * Database creation
-
-* Database initialization
+    - This app doesn't require any Database
 
 * How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+    - run `bundle exec rspec`
 
 * Deployment instructions
+    - The app only requires to run the rails server `rails s`
 
-* ...
+* TODOS
+    - Have a predefined list of Destination Names
+    - Add Google maps location link on each hotel
+    - Enhance The UI
+    - Add Sort by rating/price
