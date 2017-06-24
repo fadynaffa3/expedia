@@ -15,6 +15,10 @@ class Expedia
     end
   end
 
+  def parsed_filters
+    @parsed_filters
+  end
+
   private
 
   def search_url
