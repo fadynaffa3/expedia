@@ -18,7 +18,14 @@
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 
 require 'simplecov'
-SimpleCov.start
+require 'coveralls'
+
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+SimpleCov.start do
+    add_filter 'app/channels'
+    add_filter 'app/mailers'
+    add_filter 'app/jobs'
+end
 
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
