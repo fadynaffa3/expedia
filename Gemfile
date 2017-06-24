@@ -15,7 +15,7 @@ gem 'jquery-ui-rails'
 gem 'puma', '~> 3.7'
 gem 'rails', '~> 5.1.1'
 gem 'sass-rails', '~> 5.0'
-gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'tzinfo-data'
 gem 'uglifier', '>= 1.3.0'
 
 group :development do
@@ -38,7 +38,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'byebug'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'pry-rails'
