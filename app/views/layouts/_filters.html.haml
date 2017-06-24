@@ -1,0 +1,54 @@
+- @filters = {} unless @filters.present?
+.jumbotron
+  .filters
+    .row
+      = form_tag({action: :search, controller: :hotels}, class: 'form form-horizontal') do
+        .form-group
+          = label_tag :destination, 'Destination', class: 'control-label col-xs-2'
+          .col-xs-10
+            = text_field_tag :destination, @filters[:destination], class: 'form-control'
+
+        .form-group
+          = label_tag :check_in, 'Check in', class: 'control-label col-xs-2'
+          .col-xs-10
+            = text_field_tag :check_in, @filters[:check_in], class: 'form-control datepicker'
+
+        .form-group
+          = label_tag :check_out, 'Check out', class: 'control-label col-xs-2'
+          .col-xs-10
+            = text_field_tag :check_out, @filters[:check_out], class: 'form-control datepicker'
+
+        .form-group
+          = label_tag :length_of_stay, 'Length of stay', class: 'control-label col-xs-2'
+          .col-xs-10
+            = text_field_tag :length_of_stay, @filters[:length_of_stay], class: 'form-control'
+
+        .form-group
+          = label_tag :star_rating, 'Star rating', class: 'control-label col-xs-2'
+          = hidden_field_tag :star_rating_from, @filters[:star_rating_from] || 1, id: 'star-rating-from'
+          = hidden_field_tag :star_rating_to, @filters[:star_rating_to] || 5, id: 'star-rating-to'
+          .col-xs-8
+            .slider-range#star-rating
+          .col-xs-2
+            %p#star-rating-amount #{(@filters[:star_rating_from] || 1)} - #{(@filters[:star_rating_to] || 5)}
+
+        .form-group
+          = label_tag :total_rate, 'Total rating', class: 'control-label col-xs-2'
+          = hidden_field_tag :total_rate_from, @filters[:total_rate_from] || 1, id: 'total-rate-from'
+          = hidden_field_tag :total_rate_to, @filters[:total_rate_to] || 5, id: 'total-rate-to'
+          .col-xs-8
+            .slider-range#total-rate
+          .col-xs-2
+            %p#total-rate-amount #{(@filters[:total_rate_from] || 1)} - #{(@filters[:total_rate_to] || 5)}
+
+        .form-group
+          = label_tag :guest_rating, 'Guest rating', class: 'control-label col-xs-2'
+          = hidden_field_tag :guest_rating_from, @filters[:guest_rating_from] || 1, id: 'guest-rating-from'
+          = hidden_field_tag :guest_rating_to, @filters[:guest_rating_to] || 5, id: 'guest-rating-to'
+          .col-xs-8
+            .slider-range#guest-rating
+          .col-xs-2
+            %p#guest-rating-amount #{(@filters[:guest_rating_from] || 1)} - #{(@filters[:guest_rating_to] || 5)}
+
+        .form-group
+          = submit_tag 'Find A Deal', class: 'btn btn-lg'

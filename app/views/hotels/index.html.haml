@@ -1,0 +1,27 @@
+= render partial: '/layouts/filters'
+.row
+  - @hotels.each do |hotel|
+    - hotel_info = hotel['hotelInfo']
+    .col-xs-12
+      .row
+        .col-xs-12
+          %h3= hotel_info['hotelName']
+      .row
+        .col-xs-3
+          = image_tag hotel_info['hotelImageUrl']
+        .col-xs-9
+          %p= hotel_info['description']
+      .row
+        .col-xs-6
+          Offer Start Date: #{hotel['offerDateRange']['travelStartDate'].join('-')}
+        .col-xs-6
+          Offer End Date: #{hotel['offerDateRange']['travelEndDate'].join('-')}
+      .row
+        .col-xs-6
+          Guest Rating: #{hotel_info['hotelGuestReviewRating']}
+        .col-xs-6
+          Star Rating: #{hotel_info['hotelStarRating']}
+      .row
+        .col-xs-12
+          %p #{hotel_info['promotionAmount']} $
+          %p= hotel_info['promotionDescription']
