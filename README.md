@@ -1,27 +1,50 @@
-# README
+# Expedia Tech Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[![Build Status](https://travis-ci.org/fadynaffa3/expedia.svg?branch=master)](https://travis-ci.org/fadynaffa3/expedia)
+[![Coverage Status](https://coveralls.io/repos/github/fadynaffa3/expedia/badge.svg?branch=master)](https://coveralls.io/github/fadynaffa3/expedia?branch=master)
 
-Things you may want to cover:
+Summary
+-------
 
-* Ruby version
-    - 2.4.1
+This is a simple application that allows you to search for Hotel Deals from the Expedia API with the added functionality of filtering for different deals according to the following:
 
-* System dependencies
-    - it's recommended to use rvm or rbenv
+- Destination
+- Check in
+- Check out
+- Length of stay
+- Star rating
+- Total rating
+- Guest rating
 
-* Database creation
-    - This app doesn't require any Database
 
-* How to run the test suite
-    - run `bundle exec rspec`
+TODOS
+-----
+- Have a predefined list of Destination Names
+- Add Google maps location link on each hotel
+- Enhance The UI
+- Add Sort by rating/price
 
-* Deployment instructions
-    - The app only requires to run the rails server `rails s`
+Setup
+-----
+```
+git clone git@github.com:fadynaffa3/expedia.git
+or
+git clone https://github.com/fadynaffa3/expedia.git
 
-* TODOS
-    - Have a predefined list of Destination Names
-    - Add Google maps location link on each hotel
-    - Enhance The UI
-    - Add Sort by rating/price
+cd expedia
+
+bundle install
+
+bundle exec rails server
+
+```
+
+
+
+Testing
+-------
+```
+bundle install
+
+bundle exec rails server
+```

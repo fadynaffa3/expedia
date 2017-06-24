@@ -4,7 +4,6 @@ class HotelsController < ApplicationController
     @filters = search_params.to_hash.deep_symbolize_keys
     # create object from expedia class and execute the search action
     @hotels = Expedia.new(@filters).search
-    render :index
   end
 
   def search_params
