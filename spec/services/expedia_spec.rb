@@ -54,5 +54,22 @@ describe Expedia do
       subject = Expedia.new(filters)
       expect(subject.parsed_filters).to eq([['lengthOfStay', '2']])
     end
+
+    it "Doesn't empty valus" do
+      filters = {
+        length_of_stay: '',
+        check_in: '',
+        check_out: '',
+        star_rating_from: '',
+        star_rating_to: '',
+        total_rate_from: '',
+        total_rate_to: '',
+        guest_rating_from: '',
+        guest_rating_to: '',
+        destination: ''
+      }
+      subject = Expedia.new(filters)
+      expect(subject.parsed_filters).to eq([])
+    end
   end
 end
