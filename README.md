@@ -37,6 +37,8 @@ bundle install
 
 bundle exec rails server
 
+visit localhost:3000 on your browser
+
 ```
 
 
