@@ -1,6 +1,8 @@
 class HotelsController < ApplicationController
   def search
+    # Get filters and pass them as a hash to the expedia service nad use the global variable to set the filters values
     @filters = search_params.to_hash.deep_symbolize_keys
+    # create object from expedia class and execute the search action
     @hotels = Expedia.new(@filters).search
     render :index
   end
