@@ -65,4 +65,8 @@ class Expedia
   def total_rate_to(value)
     ['maxTotalRate', value] if value.present? && value.to_i < 5
   end
+
+  def length_of_stay(value)
+    ['lengthOfStay', value] if value.present?
+  end
 end

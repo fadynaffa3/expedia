@@ -8,6 +8,6 @@ class HotelsController < ApplicationController
   end
 
   def search_params
-    params.permit(:destination, :check_in, :check_out, :star_rating_to, :star_rating_from, :guest_rating_to, :guest_rating_from, :total_rate_to, :total_rate_from)
+    params.permit(:destination, :check_in, :check_out, :star_rating_to, :star_rating_from, :guest_rating_to, :guest_rating_from, :total_rate_to, :total_rate_from, :length_of_stay)
   end
 end
